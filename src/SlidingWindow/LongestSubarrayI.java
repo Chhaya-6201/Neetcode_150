@@ -19,6 +19,8 @@ public class LongestSubarrayI {
                 sum=sum+arr[j];
                 if(sum<=k){
                     maxLen=Math.max(maxLen,j-i+1);
+                }else {
+                    break;
                 }
             }
         }
