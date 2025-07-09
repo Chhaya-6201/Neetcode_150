@@ -1,7 +1,5 @@
 package SlidingWindow;
-
 //Better Approach-->O(2N)
-
 public class LongestSubarrayII {
     public static void main(String[] args) {
         int[] arr={2,5,20,10,10};
@@ -13,8 +11,8 @@ public class LongestSubarrayII {
     public static int maxLengthSubarray(int[] arr,int k){
         int maxLen=0,sum=0;
         int left=0,right=0;
-        while(right<arr.length-1){
-            sum+=sum+arr[right];
+        while(right<arr.length){
+            sum+=arr[right];
 
             //Shrinking the window when condition is invalid
             while(sum>k){

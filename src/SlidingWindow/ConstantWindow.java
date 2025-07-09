@@ -5,7 +5,7 @@ package SlidingWindow;
 public class ConstantWindow {
     public static void main(String[] args) {
         int[] arr={-1,2,3,3,4,5,-1};
-        int k=4;
+        int k=5;
         int ans=maxConsecutiveSumK(arr,k);
         System.out.println(ans);
     }
@@ -19,11 +19,8 @@ public class ConstantWindow {
         }
         maxSum=sum;
         while(right<arr.length-1){
-            sum=sum-arr[left];
-            left++;
-            right++;
-
-            sum=sum+arr[right];
+            sum-=arr[left++];
+            sum+=arr[++right];
             maxSum=Math.max(maxSum,sum);
         }
         return maxSum;
